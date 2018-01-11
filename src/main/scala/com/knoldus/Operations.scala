@@ -2,21 +2,6 @@ package com.knoldus
 
 class Operations {
 
-
-//  def sumOfSquare(leftOperand: Int, rightOperand: Int): Int = {
-//    (leftOperand * leftOperand) + (rightOperand * rightOperand)
-//  }
-//
-//  def sumOfCube(leftOperand: Int, rightOperand: Int): Int = {
-//    (leftOperand * leftOperand * leftOperand) + (rightOperand * rightOperand * rightOperand)
-//
-//  }
-//
-//  def sumOfInt(leftOperand: Int, rightOperand: Int): Int = {
-//    leftOperand + rightOperand
-//
-//  }
-
   def operationOfSum(operation: String, leftOperand: Int, rightOperand: Int): Int = {
     def sum(f: (Int, Int) => Int, leftOperand: Int, rightOperand: Int): Int = {
       f(leftOperand, rightOperand)
@@ -42,17 +27,20 @@ class Operations {
     }
 
     def count(leftOperand: Int, rightOperand: Int, operation: String): Int = {
-
-        operation match {
-            case "add" => operate(leftOperand: Int, rightOperand: Int, (elem1: Int, elem2: Int) => elem1 + elem2)
-            case "product" => operate(leftOperand: Int, rightOperand: Int, (elem1: Int, elem2: Int) => elem1 * elem2)
-          }
-        }
+      operation match
+      {
+        case "add" => operate(leftOperand: Int, rightOperand: Int, (elem1: Int, elem2: Int) => elem1 + elem2)
+        case "product" => operate(leftOperand: Int, rightOperand: Int, (elem1: Int, elem2: Int) => elem1 * elem2)
+      }
     }
-  list match {
-    case rightOperand :: Nil => leftOperand
-    case rightOperand :: tail => count(rightOperand, tail.head, )
-  }
+
+    val leftOperand = 0
+    val result = list match {
+        case rightOperand :: Nil => leftOperand
+        case rightOperand :: tail => count(rightOperand, tail.head,  operation)
+        case Nil => 0
+      }
+    result
   }
 }
 

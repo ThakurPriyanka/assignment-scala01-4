@@ -15,7 +15,7 @@ object Application {
     val operation = "int"
     val operationObject = new Operations
     val list = List(num1, num2, num3, num4, num5)
-    log.info(s"Sum of list  ${operationObject.operationOfSum(operation,num1,num2)}")
+    log.info(s"Sum of list  ${operationObject.operationOfSum(operation,num1,num2)} \n")
    log.info(s"Operations ${operationObject.operateList("add",list)}")
   }
 
