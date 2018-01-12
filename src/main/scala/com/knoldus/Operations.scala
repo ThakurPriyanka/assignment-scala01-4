@@ -33,14 +33,11 @@ class Operations {
         case "product" => operate(leftOperand: Int, rightOperand: Int, (elem1: Int, elem2: Int) => elem1 * elem2)
       }
     }
-
-    val leftOperand = 0
-    val result = list match {
-        case rightOperand :: Nil => leftOperand
-        case rightOperand :: tail => count(rightOperand, tail.head,  operation)
-        case Nil => 0
+    list match {
+        case leftOperand ::rightOperand:: tail :: Nil => operateList(operation, count(leftOperand,rightOperand, operation)::tail)
+//        case leftOperand:: rightOperand :: Nil => operateList(operation, count(leftOperand,rightOperand, operation))
+        case leftOperand :: Nil => leftOperand
       }
-    result
   }
 }
 
