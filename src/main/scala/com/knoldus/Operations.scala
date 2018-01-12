@@ -34,10 +34,12 @@ class Operations {
       }
     }
     list match {
-        case leftOperand ::rightOperand:: tail :: Nil => operateList(operation, count(leftOperand,rightOperand, operation)::tail)
-//        case leftOperand:: rightOperand :: Nil => operateList(operation, count(leftOperand,rightOperand, operation))
+        case leftOperand :: rightOperand :: tail  => operateList(operation, count(leftOperand,rightOperand, operation)::tail)
         case leftOperand :: Nil => leftOperand
+        case Nil => 0
       }
+
   }
+
 }
 
